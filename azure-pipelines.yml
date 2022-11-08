@@ -31,4 +31,4 @@ steps:
 #    codeCoverageClassFilter: 
 - task: CmdLine@2
   inputs:
-    script: 'dir'
+    script: 'ls'
