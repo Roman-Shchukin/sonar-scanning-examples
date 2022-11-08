@@ -30,7 +30,7 @@
       <groupId>com.mycompany</groupId>
       <artifactId>mail-deps</artifactId>
       <version>1.0.0</version>
-      <scope>import</scope>
+      <scope>compile</scope>
       <type>pom</type>
     </dependency>
   </dependencies>
