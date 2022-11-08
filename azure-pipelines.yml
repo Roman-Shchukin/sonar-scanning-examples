@@ -10,7 +10,11 @@ pool: Default
 #  vmImage: ubuntu-latest
 
 steps:
-
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    cleanDestinationDirectory: true
 - task: Maven@4
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
