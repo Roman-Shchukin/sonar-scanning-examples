@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool: 
-  vmImage: ubuntu-latest
+pool: Default
+#  vmImage: ubuntu-latest
 
 steps:
 
@@ -29,6 +29,3 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
 #    codeCoverageClassFilter: 
-- task: CmdLine@2
-  inputs:
-    script: 'ls'
