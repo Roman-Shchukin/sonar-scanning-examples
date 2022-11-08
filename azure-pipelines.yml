@@ -34,6 +34,3 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
 #    codeCoverageClassFilter: 
-- task: CmdLine@2
-  inputs:
-    script: 'ls'
