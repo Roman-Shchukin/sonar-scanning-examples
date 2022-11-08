@@ -20,11 +20,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-#    codeCoverageToolOption: 'jaCoCo'
+    codeCoverageToolOption: 'jaCoCo'
 #    codeCoverageClassFilesDirectories: 
 #    codeCoverageSourceDirectories: 
     codeCoverageFailIfEmpty: false
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
-#    isJacocoCoverageReportXML: true
-    #codeCoverageClassFilter: 
+    isJacocoCoverageReportXML: true
+#    codeCoverageClassFilter: 
