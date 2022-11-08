@@ -6,10 +6,11 @@
 trigger:
 - master
 
-pool: Default
-#  vmImage: ubuntu-latest
+pool: 
+  vmImage: ubuntu-latest
 
 steps:
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
@@ -28,3 +29,6 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
 #    codeCoverageClassFilter: 
+- task: CmdLine@2
+  inputs:
+    script: 'dir'
