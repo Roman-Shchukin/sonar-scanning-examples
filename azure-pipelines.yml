@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-ntp -B'
@@ -20,11 +20,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-    codeCoverageToolOption: 'jaCoCo'
-    codeCoverageClassFilesDirectories: 
-    codeCoverageSourceDirectories: 
+#    codeCoverageToolOption: 'jaCoCo'
+#    codeCoverageClassFilesDirectories: 
+#    codeCoverageSourceDirectories: 
     codeCoverageFailIfEmpty: false
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
-    isJacocoCoverageReportXML: true
-    codeCoverageClassFilter: 
+#    isJacocoCoverageReportXML: true
+    #codeCoverageClassFilter: 
