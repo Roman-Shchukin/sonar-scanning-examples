@@ -15,6 +15,7 @@ steps:
     versionSpec: '8'
     jdkArchitectureOption: 'x64'
     cleanDestinationDirectory: true
+    jdkSourceOption: AzureStorage
 - task: Maven@4
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
