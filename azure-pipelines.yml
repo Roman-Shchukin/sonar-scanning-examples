@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool: Default
-#  vmImage: ubuntu-latest
+pool: 
+  vmImage: ubuntu-latest
 
 steps:
 #- task: JavaToolInstaller@0
@@ -27,10 +27,10 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     codeCoverageToolOption: 'jaCoCo'
-#    codeCoverageClassFilesDirectories: 
-#    codeCoverageSourceDirectories: 
+    codeCoverageClassFilesDirectories: 
+    codeCoverageSourceDirectories: 
     codeCoverageFailIfEmpty: false
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
-#    codeCoverageClassFilter: 
+    codeCoverageClassFilter: 
