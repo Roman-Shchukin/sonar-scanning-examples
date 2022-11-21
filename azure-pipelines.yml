@@ -16,7 +16,7 @@ steps:
 #    jdkArchitectureOption: 'x64'
 #    cleanDestinationDirectory: true
 #    jdkSourceOption: PreInstalled
-- task: Maven@4
+- task: Maven@4.212.0
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-ntp -B'
