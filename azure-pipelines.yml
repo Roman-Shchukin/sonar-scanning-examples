@@ -33,4 +33,6 @@ steps:
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
-    codeCoverageClassFilter: 
+- task: PublishCodeCoverageResults@2
+  inputs:
+    summaryFileLocation: ""
