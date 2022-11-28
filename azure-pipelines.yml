@@ -35,4 +35,4 @@ steps:
     isJacocoCoverageReportXML: true
 - task: PublishCodeCoverageResults@2
   inputs:
-    summaryFileLocation: ""
+    summaryFileLocation: "**/surefire-reports/TEST-*.xml"
