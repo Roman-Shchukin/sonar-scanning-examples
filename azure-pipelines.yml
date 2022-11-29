@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool: 
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
 #- task: JavaToolInstaller@0
@@ -33,10 +33,10 @@ steps:
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
-#- task: UseDotNet@2
-#  inputs:
-#    packageType: 'sdk'
-#    version: '2.1.x'
-#- task: PublishCodeCoverageResults@2
-#  inputs:
-#    summaryFileLocation: "D:/a/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate/jacoco.xml"
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '2.1.x'
+- task: PublishCodeCoverageResults@2
+  inputs:
+    summaryFileLocation: "D:/a/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate/jacoco.xml"
