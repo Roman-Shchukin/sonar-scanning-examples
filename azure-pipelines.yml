@@ -33,11 +33,6 @@ steps:
     sonarQubeRunAnalysis: false
     sqMavenPluginVersionChoice: 'latest'
     isJacocoCoverageReportXML: true
-- task: CmdLine@2
-  inputs:
-    script: |
-      cd "D:/a/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate"
-      dir
 - task: PublishCodeCoverageResults@2
   inputs:
-    summaryFileLocation: 
+    summaryFileLocation: "D:/a/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate/jacoco.xml"
