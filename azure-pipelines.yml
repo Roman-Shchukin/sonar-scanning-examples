@@ -37,6 +37,6 @@ steps:
   inputs:
     packageType: 'sdk'
     version: '2.1.x'
-- task: PublishCodeCoverageResults@2
+- task: PublishCodeCoverageResults@2.198.0
   inputs:
     summaryFileLocation: "/Users/runner/work/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate/jacoco.xml"
