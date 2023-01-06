@@ -30,6 +30,6 @@ steps:
     mavenAuthenticateFeed: true
     checkStyleRunAnalysis: true
     jdkVersionOption: 1.8
-    jdkArchitecture: 'x64'
+    jdkArchitecture: 'x86'
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
