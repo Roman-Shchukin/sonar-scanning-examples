@@ -48,6 +48,7 @@ steps:
     checkStyleRunAnalysis: true
     jdkVersionOption: 1.8
     javaHomeSelection: Path
-    jdkDirectory: '/usr/lib/jvm/temurin-8-jdk-amd64/jre234'
+    jdkDirectory: '/usr/lib/jvm/temurin-8-jdk-amd64/jre'
+    skipEffectivePom: true
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
