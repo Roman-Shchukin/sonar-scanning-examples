@@ -10,30 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-#- task: Maven@3
-#  inputs:
-#    mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
-#    options: '-Dmaven.wagon.http.pool=false'
-#    testResultsFiles: '**/TEST-*.xml'
-#testRunTitle
-#    codeCoverageToolOption: Cobertura
-##    codeCoverageFailIfEmpty: true
-##    ${{ if ne(parameters.customMavenVersion, '') }}:
-##      mavenVersionOption: 'Path'
-##      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
-##      mavenSetM2Home: true
-#    mavenAuthenticateFeed: true
-#    checkStyleRunAnalysis: true
-#    jdkVersionOption: 1.8
-#    jdkArchitecture: 'x64'
-#    pmdRunAnalysis: true
-#    findBugsRunAnalysis: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-Dmaven.wagon.http.pool=false'
-    publishJUnitResults: false
-    goals: 'package install'
+    testResultsFiles: '**/TEST-*.xml'
+    testRunTitle: Test234kjhkj
+    codeCoverageToolOption: Cobertura
+#    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
 #      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
@@ -41,8 +25,24 @@ steps:
     mavenAuthenticateFeed: true
     checkStyleRunAnalysis: true
     jdkVersionOption: 1.8
-    javaHomeSelection: Path
-    jdkDirectory: '/usr/lib/jvm/temurin-8-jdk-amd64/jre'
-    skipEffectivePom: true
+    jdkArchitecture: 'x64'
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
+#- task: Maven@3
+#  inputs:
+#    mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
+#    options: '-Dmaven.wagon.http.pool=false'
+#    publishJUnitResults: false
+#    goals: 'package install'
+##    ${{ if ne(parameters.customMavenVersion, '') }}:
+##      mavenVersionOption: 'Path'
+##      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
+##      mavenSetM2Home: true
+#    mavenAuthenticateFeed: true
+#    checkStyleRunAnalysis: true
+#    jdkVersionOption: 1.8
+#    javaHomeSelection: Path
+#    jdkDirectory: '/usr/lib/jvm/temurin-8-jdk-amd64/jre'
+#    skipEffectivePom: true
+#    pmdRunAnalysis: true
+#    findBugsRunAnalysis: true
