@@ -17,7 +17,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     testRunTitle: FirstTestRun
     allowBrokenSymbolicLinks: false
-    mavenOpts: '-Xmx1024m -X'
+    mavenOpts: '-Xmx1024m -Xdiag'
     codeCoverageToolOption: Cobertura
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
