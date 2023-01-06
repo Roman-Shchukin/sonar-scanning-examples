@@ -38,7 +38,7 @@ steps:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-Dmaven.wagon.http.pool=false'
     testResultsFiles: '**/TEST-*.xml'
-    goals: 'package, install'
+    goals: 'package install'
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
 #      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
