@@ -10,34 +10,29 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-#- task: JavaToolInstaller@0
+#- task: Maven@3
 #  inputs:
-#    versionSpec: '8'
-#    jdkArchitectureOption: 'x64'
-#    cleanDestinationDirectory: true
-#    jdkSourceOption: PreInstalled
+#    mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
+#    options: '-Dmaven.wagon.http.pool=false'
+#    testResultsFiles: '**/TEST-*.xml'
+#testRunTitle
+#    codeCoverageToolOption: Cobertura
+##    codeCoverageFailIfEmpty: true
+##    ${{ if ne(parameters.customMavenVersion, '') }}:
+##      mavenVersionOption: 'Path'
+##      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
+##      mavenSetM2Home: true
+#    mavenAuthenticateFeed: true
+#    checkStyleRunAnalysis: true
+#    jdkVersionOption: 1.8
+#    jdkArchitecture: 'x64'
+#    pmdRunAnalysis: true
+#    findBugsRunAnalysis: true
 - task: Maven@3
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-Dmaven.wagon.http.pool=false'
-    testResultsFiles: '**/TEST-*.xml'
-    codeCoverageToolOption: Cobertura
-#    codeCoverageFailIfEmpty: true
-#    ${{ if ne(parameters.customMavenVersion, '') }}:
-#      mavenVersionOption: 'Path'
-#      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
-#      mavenSetM2Home: true
-    mavenAuthenticateFeed: true
-    checkStyleRunAnalysis: true
-    jdkVersionOption: 1.8
-    jdkArchitecture: 'x64'
-    pmdRunAnalysis: true
-    findBugsRunAnalysis: true
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
-    options: '-Dmaven.wagon.http.pool=false'
-    testResultsFiles: '**/TEST-*.xml'
+    publishJUnitResults: false
     goals: 'package install'
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
