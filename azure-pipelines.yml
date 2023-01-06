@@ -15,7 +15,7 @@ steps:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
     options: '-Dmaven.wagon.http.pool=false'
     testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: Test234kjhkj
+    testRunTitle: 'Test234kjhkj'
     codeCoverageToolOption: Cobertura
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
