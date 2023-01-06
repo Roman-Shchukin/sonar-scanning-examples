@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool: 
-  vmImage: macos-latest
+  vmImage: ubuntu-latest
 
 steps:
 #- task: JavaToolInstaller@0
@@ -16,27 +16,20 @@ steps:
 #    jdkArchitectureOption: 'x64'
 #    cleanDestinationDirectory: true
 #    jdkSourceOption: PreInstalled
-- task: Maven@4
+- task: Maven@3
   inputs:
     mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
-    options: '-ntp -B'
-#    javaHomeOption: 'JDKVersion'
-#    jdkVersionOption: '1.8'
-#    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-    codeCoverageToolOption: 'jaCoCo'
-    codeCoverageClassFilesDirectories: 
-    codeCoverageSourceDirectories: 
-    codeCoverageFailIfEmpty: false
-    sonarQubeRunAnalysis: false
-    sqMavenPluginVersionChoice: 'latest'
-    isJacocoCoverageReportXML: true
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '2.1.x'
-- task: PublishCodeCoverageResults@2.198.0
-  inputs:
-    summaryFileLocation: "/Users/runner/work/1/s/sonarqube-scanner-maven/maven-multimodule/CCReport43F6D5EF/target/site/jacoco-aggregate/jacoco.xml"
+    options: '-Dmaven.wagon.http.pool=false'
+    testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOption: Cobertura
+    codeCoverageFailIfEmpty: true
+#    ${{ if ne(parameters.customMavenVersion, '') }}:
+#      mavenVersionOption: 'Path'
+#      mavenDirectory: '$(Agent.BuildDirectory)/mavenVersions/apache-maven-${{ parameters.customMavenVersion }}'
+#      mavenSetM2Home: true
+    mavenAuthenticateFeed: true
+    checkStyleRunAnalysis: true
+    jdkVersionOption: 1.8
+    jdkArchitecture: 'x64'
+    pmdRunAnalysis: true
+    findBugsRunAnalysis: true
