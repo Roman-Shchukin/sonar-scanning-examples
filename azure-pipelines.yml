@@ -19,6 +19,7 @@ steps:
     allowBrokenSymbolicLinks: false
     mavenOpts: '-Xmx1024m -XshowSettings'
     codeCoverageToolOption: Cobertura
+    codeCoverageClassFilter: com.acme.module1.Module1
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
