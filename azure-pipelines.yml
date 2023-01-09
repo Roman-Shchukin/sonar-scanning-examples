@@ -18,8 +18,8 @@ steps:
     testRunTitle: FirstTestRun
     allowBrokenSymbolicLinks: false
     mavenOpts: '-Xmx1024m -XshowSettings'
-    codeCoverageToolOption: JaCoCo
-    codeCoverageClassFilter: com.acme.module1.Module1
+    codeCoverageToolOption: Cobertura
+    codeCoverageClassFilter: +:com.acme.module1.Module1
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
