@@ -18,7 +18,7 @@ steps:
     testRunTitle: FirstTestRun
     allowBrokenSymbolicLinks: false
     mavenOpts: '-Xmx1024m -XshowSettings'
-    codeCoverageToolOption: Cobertura
+    codeCoverageToolOption: JaCoCo
     codeCoverageClassFilter: com.acme.module1.Module1
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
