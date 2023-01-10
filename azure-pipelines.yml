@@ -20,7 +20,8 @@ steps:
     mavenOpts: '-Xmx1024m -XshowSettings'
     codeCoverageToolOption: JaCoCo
     classFilesDirectories: 'module1/src/main/java/com/acme/module1'
-#    codeCoverageClassFilter: +:com.acme.module1.Module1
+    srcDirectories: 'module1/src/main/java/com/acme/module1'
+    codeCoverageClassFilter: +:com.acme.module1.Module1
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
