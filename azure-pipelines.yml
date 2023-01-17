@@ -34,7 +34,9 @@ steps:
     jdkVersionOption: 1.8
     jdkArchitecture: 'x64'
     pmdRunAnalysis: true
-    findBugsRunAnalysis: true
+    spotBugsRunAnalysis: true
+    spotBugsVersion: 4.5.3.0
+#    findBugsRunAnalysis: true
 #- task: Maven@3
 #  inputs:
 #    mavenPomFile: 'sonarqube-scanner-maven/maven-multimodule/pom.xml'
