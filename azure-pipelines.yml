@@ -23,7 +23,6 @@ steps:
     classFilesDirectories: 'module1/src/main/java/com/acme/module1'
     srcDirectories: 'module1/src/main/java/com/acme/module1'
     codeCoverageClassFilter: +:com.acme.module1.Module1
-    spotBugsRunAnalysis: true
 #    codeCoverageFailIfEmpty: true
 #    ${{ if ne(parameters.customMavenVersion, '') }}:
 #      mavenVersionOption: 'Path'
